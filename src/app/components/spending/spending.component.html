@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <h2 class="text-center font-title">Gastos</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <app-enter-expense (expenses)='getExpenses($event)' (budgets)='getBudget($event)'></app-enter-expense>
+                </div>
+                <div class="col-md-6">
+                    <app-list-expenses [budget]='budgetList' [expenses]='listExpenses'></app-list-expenses>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<h4 class="text-center">Ingresar Gasto</h4>
+<hr>
+<div class="alert alert-danger text-center my-3" *ngIf='!isValid' role="alert">
+    Complete correctamente todos los campos
+</div>
+<div class="alert alert-danger text-center my-3" *ngIf='costIsValid == false && isValid' role="alert">
+    Su costo es mas alto que su presupuesto
+</div>
+<form #formExpenses>
+    <div class="form-group mb-4">
+        <label for="expense">Gasto</label>
+        <input type="text" class="form-control" [(ngModel)]='expense' name="expense" id="expense" placeholder="Ej: Comida...">
+    </div>
+    <div class="form-group mb-4">
+        <label for="cost">Costo</label>
+        <input type="number" class="form-control" [(ngModel)]='cost' name="cost" min="0" id="cost" placeholder="Ej: 200">
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-info btn-block"  value="Enviar" (click)='agregar(formExpenses)'>
+    </div>
+</form>

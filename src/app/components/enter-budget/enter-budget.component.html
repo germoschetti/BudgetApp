@@ -1,0 +1,21 @@
+<div class="row mt-5">
+    <div class="col-lg-6 offset-lg-3">
+        <h2 class="text-center font-title">Ingrese Presupuesto</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="alert alert-danger alert-error" *ngIf=' isValid == false' role="alert">
+                    El presupuesto debe ser mayor a cero
+                </div>
+                <form name="budgetForm" #budgetForm>
+                    <div class="form-group">
+                        <label for="budget">Presupuesto</label>
+                        <input type="number" class="form-control form-control-lg" name="budget" [(ngModel)]='budget' id="budget"
+                            min="0" placeholder="Ingrese su presupuesto...">
+                    </div>
+                    <button class="btn btn-secondary btn-block mt-5"
+                        (click)='addBudget(budgetForm)'>Aceptar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
